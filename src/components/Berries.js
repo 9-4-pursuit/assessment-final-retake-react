@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getBerries } from '../../fetch'
+import { getBerries } from '../fetch'
 import Berry from "./Berry";
 
 export default function Berries() {
@@ -34,8 +34,9 @@ export default function Berries() {
                 })}
             </select>
 
-            {isBerrySelected ? <aside>
-            <Berry berry={berry}/>
+            {isBerrySelected ? 
+            <aside>
+                <Berry berry={berry}/>
             </aside> 
             : null}
 
