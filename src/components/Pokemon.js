@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import { getPokemon } from "../fetch";
 import ChosenPokemon from "./ChosenPokemon"
@@ -40,7 +38,7 @@ export default function Pokemon() {
     <h1>Search for a Pokemon</h1>
     <form onSubmit={onSearchSubmit}>
       <input id="searchbox" type="text" placeholder="Find Your Pokemon" onChange={searchTextChange}/>
-      <button type="submit">Submit</button>
+      <input type="submit" />
     </form>
 
     {(searchSubmitted && pokemon.name) ? <ChosenPokemon pokemon={pokemon}/> 
