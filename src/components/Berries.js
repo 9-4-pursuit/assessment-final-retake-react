@@ -28,7 +28,7 @@ export default function Berries() {
 
     return (
         <div className="berries">
-            <h1>Select a Berry</h1>
+            <h1>Select a Type</h1>
             <select onChange={onBerrySelection}>
                 <option value={-1}></option>
                 {

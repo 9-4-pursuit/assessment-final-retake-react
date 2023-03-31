@@ -39,7 +39,7 @@ export default function Pokemon() {
   return (<div className="Pokemon">
     <h1>Search for a Pokemon</h1>
     <form onSubmit={onSearchSubmit}>
-      <input id="searchbox" type="text" onChange={searchTextChange}/>
+      <input id="searchbox" type="text" placeholder="Find Your Pokemon" onChange={searchTextChange}/>
       <button type="submit">Submit</button>
     </form>
 
