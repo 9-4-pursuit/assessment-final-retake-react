@@ -9,7 +9,12 @@ export default function Berries() {
 
     useEffect(() => {
         getBerries()
-        .then((res) => setAllBerries([...res]))
+        .then((res) => {
+            // let berriesList = res.results;
+            // console.log(res)
+            console.log(res.results)
+            setAllBerries(res.results)
+        })
     }, []);
 
     function onBerrySelection(event) {
@@ -23,15 +28,14 @@ export default function Berries() {
         }
     }
 
-
     return (
         <div className="berries">
             <h1>Select a Berry</h1>
             <select onChange={onBerrySelection}>
                 <option value={-1}></option>
-                {allBerries.map((berry, index) => {
-                return (<option value={index} key={berry.id}>{berry.title}</option>)
-                })}
+                {
+                    allBerries.map((berry, index) => <option value={index} key={berry.name}>{berry.name}</option>)
+                }
             </select>
 
             {isBerrySelected ? 

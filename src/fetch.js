@@ -4,6 +4,7 @@ const BASE_URL = 'https://pokeapi.co/api/v2/'
 export async function getBerries() {
     return await fetch(`${BASE_URL}berry/`)
     .then((res) => res.json())
+    // .then((res) => console.log(res))
     .catch((e) => console.log(e))
 }
 

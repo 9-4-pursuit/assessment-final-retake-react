@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Berries from "./components/Berries";
-import Pokemon from "./components/pokemon/Pokemon";
-import Locations from "./components/locations/Locations";
+import Pokemon from "./components/Pokemon";
+import Locations from "./components/Locations";
 
 function App() {
 
