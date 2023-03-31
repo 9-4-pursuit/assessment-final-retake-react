@@ -10,9 +10,6 @@ export default function Berries() {
     useEffect(() => {
         getBerries()
         .then((res) => {
-            // let berriesList = res.results;
-            // console.log(res)
-            console.log(res.results)
             setAllBerries(res.results)
         })
     }, []);
@@ -26,6 +23,7 @@ export default function Berries() {
             setBerry({});
             setIsBerrySelected(false);
         }
+        event.target.value = ''
     }
 
     return (

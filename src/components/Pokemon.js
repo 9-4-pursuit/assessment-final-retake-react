@@ -13,21 +13,20 @@ export default function Pokemon() {
   useEffect(() => {
     getPokemon()
     .then((res) => {
-      setAllPokemon([...res]);
+      setAllPokemon(res.results);
     });
   },[]);
-
   
   function onSearchSubmit(event) {
     event.preventDefault();
     event.target.searchbox.value = "";
 
-    const result = allPokemon.filter((pokemon) => {
-      return (pokemon.name.toLowerCase() === searchText.toLowerCase());
-    })[0]
+    const searchedPokemon = allPokemon.filter((poke) => {
+        return poke.name === searchText
+    })
 
-    result ? 
-    setPokemon(result) 
+    searchedPokemon ? 
+    setPokemon(searchedPokemon[0]) 
     :
     setPokemon({})
     setSearchSubmitted(true);
@@ -38,14 +37,14 @@ export default function Pokemon() {
   }
 
   return (<div className="Pokemon">
-    <h1>Search for a pokemon</h1>
+    <h1>Search for a Pokemon</h1>
     <form onSubmit={onSearchSubmit}>
       <input id="searchbox" type="text" onChange={searchTextChange}/>
       <button type="submit">Submit</button>
     </form>
 
-    {(searchSubmitted && pokemon.name) ? <pokemon pokemon={pokemon}/> 
-    :(searchSubmitted ? <p>Not Found</p> 
+    {(searchSubmitted && pokemon.name) ? <ChosenPokemon pokemon={pokemon}/> 
+    :(searchSubmitted ? <p>Pokemon not found! Try another name or ID number</p> 
     : null)}
 
   </div>);
