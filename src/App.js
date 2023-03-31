@@ -1,17 +1,30 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
+// import NavBar from "./Components/NavBar";
 import Pokemon from "./Components/Pokemon";
-import Locations from "./Components/Locations";
 import Berries from "./Components/Berries";
+import Locations from "./Components/Locations";
 
 function App() {
   return (
-    <div>
-      <h1>Pokemon Details:</h1>
-      <Pokemon />
-      <Locations locationUrl={"https://pokeapi.co/api/v2/pokemon/1/location_area_encounters"} />
-      <Berries  heldItems={[{ item: { name: "cheri-berry", url: "https://pokeapi.co/api/v2/berry/126/" } }, { item: { name: "oran-berry", url: "https://pokeapi.co/api/v2/berry/128/" } }]} />
+    <div className="app">
+      <Router>
+      <div className="container">
+        <h1></h1>
+        {/* <NavBar /> */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pokemon" element={<Pokemon/>} /> 
+            <Route path="/berries" element={<Berries/>} />
+            <Route path="/locations" element={<Locations />} />
+          </Routes>
+        </main>
+      </div>
+
+      </Router>
+
     </div>
   );
 }
-
 export default App;

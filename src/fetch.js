@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
-
 function PokeAPIComponent() {
   const [pokemonData, setPokemonData] = useState(null);
   const [pokemonLocation, setPokemonLocation] = useState(null);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/1")
+    fetch("https://pokeapi.co/api/v2/pokemon/")
       .then(response => response.json())
       .then(data => {
         setPokemonData(data);
@@ -16,6 +14,16 @@ function PokeAPIComponent() {
       })
       .catch(error => console.log(error));
   }, []);
+  
+  fetch('https://pokeapi.co/api/v2/location/')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+  fetch('https://pokeapi.co/api/v2/berry/')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
 
   return (
     <div>
