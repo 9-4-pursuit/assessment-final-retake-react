@@ -14,8 +14,8 @@ export default function Container() {
 
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/berries" element={<BerriesDrop/>}/>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/" element={<HomePage/>}/>
+                <Route path="/pokemon" element={<PokemonSearch/>}/>
+                <Route path="/locations" element={<Locations/>}/>
                 
 
 
