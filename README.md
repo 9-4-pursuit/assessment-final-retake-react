@@ -37,7 +37,7 @@ Includes a centered header with the text "Welcome to My Pokemon App!". ![Welcome
 
 ### `/berries`
 
-- Displays the header "Select a Type" above a dropdown menu, centered.
+- Displays the header "Select a Type" above a dropxdown menu, centered.
 - The dropdown menu should display a list of the berries available at `https://pokeapi.co/api/v2/berry/` (this will give the first 20 berries, by default).
 - When a berry is chosen from the dropdown menu, the
   - `name`
