@@ -3,3 +3,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background: #e42323;
+  padding: 1em;
+  margin-bottom: 2em;
+  font-family: sans-serif;
+  list-style: none;
+}
+
+
+nav a {
+  text-decoration: none;
+  font-size: 2em;
+  color: white;
+  list-style: none;
+}
